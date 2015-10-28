@@ -1,0 +1,197 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.HolyGrail,
+.HolyGrail-body {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.HolyGrail-nav {
+  order: -1;
+  background-color: #cecece;
+}
+
+.HolyGrail-nav > * {
+    padding: 1rem;
+    border-bottom: 1px solid #fafafa;
+    display: block;
+}
+
+@media (min-width: 768px) {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .HolyGrail-content {
+    flex: 1;
+    margin: 2rem;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}
+
+header {
+    padding: 1rem 2rem;
+}
+body {
+    margin: 0;
+}
+
+a,
+.destyledButton {
+    color: #347AB7;
+}
+
+p {
+    margin-top: 0.5em;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
+
+hr {
+    border: 0 none;
+    border-top: 1px solid #aaa;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+
+.breadcrumbs {
+    height: 1em;
+    margin: 1em 0;
+}
+
+.chart {
+    position: relative;
+    margin: 0 auto;
+    min-height: 350px;
+}
+.chart--large {
+    width: 950px;
+}
+
+.chart--needsUpload {
+    border: 2px dashed #AC9062;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.chart--dragging {
+    border-style: solid;
+    background-color: #E6D4B6;
+}
+
+.chart-uploadMessage {
+    display: none;
+    font-size: 1.9em;
+    text-align: center;
+    margin-top: 100px;
+    pointer-events: none;
+}
+.chart--needsUpload .chart-uploadMessage {
+    display: block;
+}
+
+.chart-uploadMessage small {
+    font-size: 0.5em;
+}
+
+.hiddenFileInput {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+.chart path {
+    stroke: #fff;
+}
+
+.details {
+    position: absolute;
+    top: 325px;
+    left: 50%;
+    width: 170px;
+    margin-left: -85px;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+    z-index: -1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chart--large .details {
+    top: 425px;
+}
+
+.details-size {
+    font-size: 0.8em;
+    margin-top: 1em;
+}
+
+.details-name {
+    font-weight: bold;
+}
+
+.details-size::before {
+    content: "(";
+}
+.details-size::after {
+    content: ")";
+}
+
+.details-percentage {
+    margin: 0.4em 0 0em;
+    font-size: 2.4em;
+    line-height: 1em;
+}
+
+
+footer {
+    margin-top: 4em;
+}
+
+footer h2 {
+    margin: 1.5em 0 0.5em;
+    font-size: 1.3em;
+}
+
+
+
+.destyledButton {
+    background: none;
+    border: 0 none;
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+    text-decoration: underline;
+}
