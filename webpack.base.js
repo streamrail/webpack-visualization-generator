@@ -8,8 +8,8 @@ module.exports = {
     context: __dirname,
     entry: './src/browser',
     output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'build.js'
+        path: path.join(__dirname, 'bundle'),
+        filename: 'bundle.js'
     },
     module: {
         preLoders: [{
@@ -24,7 +24,7 @@ module.exports = {
         }, {
             test: /\.css$/,
             loader: "style-loader!css-loader"
-        }, ]
+        }]
     },  
     plugins: [
         

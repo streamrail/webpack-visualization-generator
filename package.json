@@ -8,15 +8,13 @@
     "build": "webpack --config webpack.prod.js"
   },
   "dependencies": {
-    "babel": "^5.8.23",
     "d3": "^3.5.6",
-    "es6-promise": "^3.0.2",
-    "memory-fs": "^0.2.0",
     "prettysize": "0.0.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
   },
   "devDependencies": {
+    "babel": "^5.8.29",
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
     "css-loader": "^0.21.0",

@@ -7,16 +7,6 @@ import readFile from './util/readFile';
 import buildHierarchy from './buildHierarchy';
 
 export default React.createClass({
-
-    propTypes: {
-        config: React.PropTypes.object
-    },
-
-    getDefaultProps(){
-        return {
-            config: {}
-        };
-    },
     
     getInitialState() {
         return {
@@ -73,7 +63,7 @@ export default React.createClass({
         this.setState({
             loading: true
         });
-        if (typeof this.props.config.json === 'string') {
+        if (typeof window.STATS_JSON === 'string') {
             let request = new XMLHttpRequest();
             request.open('GET', 'stats.json', true);
             
@@ -89,7 +79,7 @@ export default React.createClass({
             
             request.send();
         } else {
-            this.handleFileUpload(this.props.config.json || {});
+            this.handleFileUpload(window.STATS_JSON || {});
         }
         
     },
@@ -120,23 +110,9 @@ export default React.createClass({
         if (this.state.chartData && this.state.chartData.maxDepth > 9) {
             chartAreaClass += ' chart--large';
         }
-
-        var backgroundStyle = (
-            <style>
-                {`
-                    header { 
-                        background-color: ${this.props.config.headerBackgroundColor};
-                        color: ${this.props.config.headerTextColor}
-                    }
-                `}
-            </style>
-        );
                 
         return (
             <div>
-                {backgroundStyle}
-                
-                
                 <div ref="ChartArea" className={chartAreaClass} onClick={this.chartAreaClick}>
                     <ChartDetails details={this.state.hoverDetails} topMargin={this.state.paddingDiff} />
                     <Chart
