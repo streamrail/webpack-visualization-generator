@@ -1,10 +1,10 @@
 module.exports = function(templateData) {
-	var links = (function(links){
-		return links.map(function (link){
-			'<a target="_blank" href="' + link.href + '">' + link.name + '</a>';
-		}).join('\n');
-	})(templateData.config.links || []);
-	var title = templateData.config.title || 'Webpack Visualizer';
+    var links = (function(links){
+        return links.map(function (link){
+            return '<a target="_blank" href="' + link.href + '">' + link.name + '</a>';
+        }).join('\n');
+    })(templateData.config.links || []);
+    var title = templateData.config.title || 'Webpack Visualizer';
     return [
 '<!doctype html>',
 '<head>',
@@ -27,9 +27,7 @@ module.exports = function(templateData) {
 '        <div id="App"></div>',
 '    </main>',
 '    <nav class="HolyGrail-nav">',
-'    	' + links,
-'    	<div>Build No. 333</div>',
-'    	<a href="#">Commit 3442j32</a>',
+'       ' + links,
 '    </nav>',
 '  </div>',
 '</body>',
@@ -42,4 +40,5 @@ module.exports = function(templateData) {
 ].join('\n')
 
 }
+
 
